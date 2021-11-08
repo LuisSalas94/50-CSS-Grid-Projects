@@ -1,0 +1,315 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+*,
+*::after,
+*::before {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	box-sizing: border-box;
+	text-decoration: none;
+}
+
+:root {
+	--primary: #ddd;
+	--dark: #333;
+	--shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+html {
+	font-family: "Roboto", sans-serif;
+	color: var(--dark);
+}
+
+body {
+	background-color: #f1f2f6;
+	margin: 30px 40px;
+	line-height: 1.4;
+}
+
+.img {
+	max-width: 100%;
+}
+
+.wrapper {
+	padding: 0 5rem;
+	display: grid;
+	gap: 20px;
+}
+
+.btn {
+	background-color: #cc8e35;
+	color: var(--primary);
+	padding: 0.5rem 1.3rem;
+	border-radius: 4px;
+	border: 0;
+	font-size: 1rem;
+}
+
+/* ************************************ Navigation ****************************************/
+.main-nav ul {
+	display: grid;
+	gap: 20px;
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.main-nav a {
+	background-color: var(--primary);
+	color: var(--dark);
+	display: block;
+	text-align: center;
+	padding: 0.8rem;
+	text-transform: uppercase;
+	font-size: 1.1rem;
+	box-shadow: var(--shadow);
+	transition: all 0.4s ease-in-out;
+}
+
+.main-nav a:hover {
+	background-color: var(--dark);
+	color: var(--primary);
+}
+
+/* ************************************ Top Container ****************************************/
+.top-container {
+	display: grid;
+	gap: 20px;
+	grid-template-areas:
+		"showcase 		showcase		top-box-a"
+		"showcase 		showcase		top-box-b";
+}
+
+.top-container .showcase h1,
+.top-container .showcase p {
+	color: var(--primary);
+	font-weight: lighter;
+}
+
+.top-container .showcase h1 {
+	font-size: 4rem;
+	text-align: center;
+}
+
+.showcase {
+	grid-area: showcase;
+	min-height: 500px;
+	background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)),
+		url(img/img1.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: 3rem;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	box-shadow: var(--shadow);
+	line-height: 2;
+}
+
+.showcase h1 {
+	font-size: 3rem;
+	color: var(--dark);
+	letter-spacing: 3px;
+	margin-bottom: 0;
+}
+
+.showcase p {
+	font-size: 1.2rem;
+	margin-top: 0;
+	color: var(--dark);
+	list-style: none;
+}
+
+.top-box {
+	background-color: var(--primary);
+	display: grid;
+	align-items: center;
+	justify-items: center;
+	box-shadow: var(--shadow);
+	padding: 1.5rem;
+}
+
+.top-box h4 {
+	font-size: 1.5rem;
+}
+.top-box p {
+	font-size: 1.5rem;
+	font-weight: lighter;
+}
+
+.top-box-a {
+	grid-area: top-box-a;
+}
+
+.top-box-b {
+	grid-area: top-box-b;
+}
+
+/* ************************************ Boxes Container ****************************************/
+.boxes-container {
+	display: grid;
+	gap: 20px;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.boxes-container .box i {
+	color: #cc8e35;
+}
+
+.box {
+	text-align: center;
+	background-color: var(--primary);
+	padding: 1.5rem 2rem;
+	box-shadow: var(--shadow);
+}
+
+.box h3 {
+	margin: 0.8rem 0;
+}
+
+/* ************************************ Info Container ****************************************/
+.info-container {
+	display: grid;
+	gap: 30px;
+	grid-template-columns: repeat(2, 1fr);
+	background-color: var(--primary);
+	box-shadow: var(--shadow);
+	padding: 2rem;
+}
+
+.info-container p {
+	line-height: 2;
+}
+
+.info-container div {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+.info-container div a {
+	margin-top: 0.8rem;
+}
+
+.info-container img {
+	width: 100%;
+}
+
+/* ************************************ Porfolio Container ****************************************/
+.portfolio-container {
+	display: grid;
+	gap: 20px;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.portfolio-container img {
+	width: 250px;
+	height: 250px;
+	max-width: 100%;
+	box-shadow: var(--shadow);
+}
+
+/* ************************************ Footer Container ****************************************/
+footer {
+	font-size: 1.2rem;
+	margin-top: 2rem;
+	background-color: #4b4b4b;
+	color: var(--primary);
+	text-align: center;
+	padding: 1rem;
+}
+
+/* ************************************ Media Queries ****************************************/
+@media screen and (max-width: 1200px) {
+	.top-container {
+		grid-template-areas:
+			"showcase			showcase"
+			"top-box-a		top-box-b";
+	}
+
+	.top-container .top-box {
+		height: 12rem;
+		text-align: center;
+	}
+
+	.info-container {
+		grid-template-columns: 1fr;
+	}
+
+	.info-container img {
+		max-width: 100%;
+		margin: auto;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.top-container {
+		grid-template-areas:
+			"showcase			showcase"
+			"top-box-a		top-box-a"
+			"top-box-b		top-box-b";
+	}
+
+	.top-container .top-box {
+		height: 10rem;
+	}
+
+	.top-container .showcase a {
+		margin-top: 1rem;
+	}
+
+	.top-container .top-box {
+		text-align: center;
+	}
+
+	.top-container .top-box a {
+		margin-top: 1rem;
+	}
+
+	.showcase a {
+		width: 100%;
+		text-align: center;
+		margin: auto;
+	}
+
+	.showcase h1 {
+		font-size: 2.2rem;
+		text-align: center;
+	}
+
+	.main-nav ul {
+		grid-template-columns: 1fr;
+	}
+
+	.info-container {
+		grid-template-columns: 1fr;
+	}
+
+	.info-container img {
+		width: 100%;
+	}
+
+	.info-container a {
+		width: 100%;
+		text-align: center;
+		margin: auto;
+	}
+	.portfolio-container img {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.wrapper {
+		padding: 0 0.5rem;
+	}
+
+	.top-container {
+		grid-template-areas:
+			"showcase"
+			"top-box-a"
+			"top-box-b";
+	}
+}
