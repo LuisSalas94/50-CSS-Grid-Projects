@@ -35,6 +35,7 @@ body {
 	padding: 0 5rem;
 	display: grid;
 	gap: 20px;
+	justify-content: center;
 }
 
 .btn {
